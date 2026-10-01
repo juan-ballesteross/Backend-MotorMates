@@ -1,6 +1,6 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../database/database.js";
- 
+
 const Vehicle = sequelize.define("vehicles", {
   id: {
     type: DataTypes.INTEGER,
@@ -29,5 +29,5 @@ const Vehicle = sequelize.define("vehicles", {
     allowNull: true,
   },
 });
- 
+
 export default Vehicle;

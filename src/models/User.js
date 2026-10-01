@@ -1,6 +1,6 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../database/database.js";
- 
+
 const User = sequelize.define("users", {
   id: {
     type: DataTypes.INTEGER,
@@ -18,5 +18,5 @@ const User = sequelize.define("users", {
     validate: { isEmail: true },
   },
 });
- 
+
 export default User;
