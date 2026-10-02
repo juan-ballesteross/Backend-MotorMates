@@ -1,0 +1,5 @@
+$kind: http-request
+description: ""
+url: http://localhost:3000/vehicles/1
+method: GET
+order: 2608189513680766

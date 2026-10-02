@@ -1,0 +1,7 @@
+{
+  "nombre": "Traer todos los articulos",
+  "metodo": "GET",
+  "url": "http://localhost:3000/vehicles",
+  "headers": null,
+  "body": null
+}

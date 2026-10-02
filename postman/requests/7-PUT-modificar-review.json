@@ -1,0 +1,10 @@
+{
+  "nombre": "Modificar la informacion de un review dado su id",
+  "metodo": "PUT",
+  "url": "http://localhost:3000/reviews/1",
+  "headers": { "Content-Type": "application/json" },
+  "body": {
+    "rating": 3,
+    "comment": "Lo volvi a probar y el consumo es mas alto de lo que esperaba."
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "nombre": "Crear un review dado userId, vehicleId y la info del review",
+  "metodo": "POST",
+  "url": "http://localhost:3000/reviews",
+  "headers": { "Content-Type": "application/json" },
+  "body": {
+    "userId": 1,
+    "vehicleId": 1,
+    "rating": 5,
+    "comment": "Excelente vehiculo, muy comodo y potente."
+  }
+}

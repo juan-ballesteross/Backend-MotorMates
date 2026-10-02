@@ -1,0 +1,7 @@
+{
+  "nombre": "Buscar un usuario por id",
+  "metodo": "GET",
+  "url": "http://localhost:3000/users/1",
+  "headers": null,
+  "body": null
+}

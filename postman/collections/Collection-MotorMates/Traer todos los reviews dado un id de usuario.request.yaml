@@ -1,0 +1,5 @@
+$kind: http-request
+description: ""
+url: http://localhost:3000/users/1/reviews
+method: GET
+order: 4037473063103544

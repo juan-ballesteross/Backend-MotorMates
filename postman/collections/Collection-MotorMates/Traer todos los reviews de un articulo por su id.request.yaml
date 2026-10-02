@@ -1,0 +1,5 @@
+$kind: http-request
+description: ""
+url: http://localhost:3000/vehicles/1/reviews
+method: GET
+order: 3976973518559421

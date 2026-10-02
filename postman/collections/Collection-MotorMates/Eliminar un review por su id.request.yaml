@@ -1,0 +1,5 @@
+$kind: http-request
+description: ""
+url: http://localhost:3000/reviews/1
+method: DELETE
+order: 4284616236753443

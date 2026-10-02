@@ -1,0 +1,9 @@
+$kind: http-request
+name: Modificar la informacion de un review dado su id/reviews/1
+description: ""
+url: http://localhost:3000/reviews/1
+method: PUT
+body:
+  type: json
+  content: ""
+order: 4084952449503848

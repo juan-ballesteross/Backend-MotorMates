@@ -14,12 +14,14 @@ async function init() {
     await sequelize.authenticate();
     console.log("Conexión establecida con éxito");
 
+    // Muy importante el orden: primero las relaciones, luego las tablas y
+    // al final los datos. Si sync() corre antes, Sequelize todavía no conoce
+    // las asociaciones y el onDelete: "cascade" no llega a la base de datos.
+    setupRelations();
+
     // force: true borra y vuelve a crear las tablas en cada inicio —
     // útil ahora en desarrollo, pero se quitaría en producción.
     await sequelize.sync({ force: true });
-
-    // Muy importante el orden: primero las relaciones, luego los datos.
-    setupRelations();
 
     await loadInitialUsers();
     await loadInitialVehicles();

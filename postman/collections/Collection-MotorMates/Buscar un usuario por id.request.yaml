@@ -1,0 +1,5 @@
+$kind: http-request
+description: ""
+url: Buscar un usuario por id
+method: GET
+order: 3147592241760976

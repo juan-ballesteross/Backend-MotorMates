@@ -1,0 +1,7 @@
+{
+  "nombre": "Traer todos los reviews de un articulo por su id",
+  "metodo": "GET",
+  "url": "http://localhost:3000/vehicles/1/reviews",
+  "headers": null,
+  "body": null
+}

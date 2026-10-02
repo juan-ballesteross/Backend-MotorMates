@@ -6,6 +6,13 @@ const createReview = async (req, res) => {
   try {
     const { userId, vehicleId, rating, comment } = req.body;
 
+    if (rating === undefined || rating === null) {
+      return res.status(400).json({ error: "El rating es obligatorio" });
+    }
+    if (!Number.isInteger(rating) || rating < 0 || rating > 5) {
+      return res.status(400).json({ error: "El rating debe ser un entero entre 0 y 5" });
+    }
+
     const user = await User.findByPk(userId);
     if (!user) {
       return res.status(404).json({ error: "Usuario no encontrado" });
@@ -17,7 +24,7 @@ const createReview = async (req, res) => {
     }
 
     const newReview = await Review.create({ userId, vehicleId, rating, comment });
-    res.json(newReview);
+    res.status(201).json(newReview);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
@@ -60,7 +67,21 @@ const updateReview = async (req, res) => {
       return res.status(404).json({ error: "Review no encontrada" });
     }
 
-    await review.update(req.body);
+    // Solo rating y comment son editables: userId y vehicleId se fijan al crear
+    // la review y no deben reasignarse, para no romper la asociación.
+    const { rating, comment } = req.body;
+
+    if (rating !== undefined) {
+      if (!Number.isInteger(rating) || rating < 0 || rating > 5) {
+        return res.status(400).json({ error: "El rating debe ser un entero entre 0 y 5" });
+      }
+      review.rating = rating;
+    }
+    if (comment !== undefined) {
+      review.comment = comment;
+    }
+
+    await review.save();
     res.json(review);
   } catch (error) {
     res.status(500).json({ error: error.message });

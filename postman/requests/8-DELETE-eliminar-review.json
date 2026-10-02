@@ -1,0 +1,7 @@
+{
+  "nombre": "Eliminar un review por su id",
+  "metodo": "DELETE",
+  "url": "http://localhost:3000/reviews/1",
+  "headers": null,
+  "body": null
+}
