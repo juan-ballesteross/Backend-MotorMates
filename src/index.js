@@ -3,6 +3,7 @@ import { sequelize } from "./database/database.js";
 import { setupRelations } from "./database/relations.js";
 import { loadInitialUsers } from "./database/initUsers.js";
 import { loadInitialVehicles } from "./database/initVehicles.js";
+import { loadInitialReviews } from "./database/initReviews.js";
 
 // Importar los modelos para que Sequelize sepa que debe crear sus tablas.
 import "./models/User.js";
@@ -24,7 +25,9 @@ async function init() {
     await sequelize.sync({ force: true });
 
     await loadInitialUsers();
+    // Las reviews van de últimas: referencian usuarios y vehículos por FK.
     await loadInitialVehicles();
+    await loadInitialReviews();
 
     app.listen(3000, () => {
       console.log("Servidor corriendo en el puerto 3000");
