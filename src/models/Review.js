@@ -20,7 +20,7 @@ const Review = sequelize.define("reviews", {
   },
   
   userId: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.STRING(128),
     allowNull: false,
     references: {
       model: User,

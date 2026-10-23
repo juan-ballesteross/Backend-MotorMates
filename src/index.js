@@ -9,6 +9,9 @@ import { loadInitialReviews } from "./database/initReviews.js";
 import "./models/User.js";
 import "./models/Vehicle.js";
 import "./models/Review.js";
+import "./models/Like.js";
+import "./models/Follow.js";
+import "./models/Notification.js";
 
 async function init() {
   try {
